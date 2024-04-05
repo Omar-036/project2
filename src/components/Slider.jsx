@@ -2,30 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-
-const spanStyle = {
-  // color: '#000000',
-};
-
-const divStyle = {
-  backgroundSize: "100% 100%",
-  backgroundRepeat: "no-repeat",
-  height: "600px",
-  position: "relative",
-};
-
-const h2Styling = {
-  fontSize: "40px",
-  fontWeight: "bold",
-};
-
-const contentStyling = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  color: "#084",
-  translate: "-50% -50%",
-};
+import styles from "./Slider.module.css";
+import Loader from "./Loader";
 
 const slideImages = [
   {
@@ -36,10 +14,6 @@ const slideImages = [
     url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
     caption: "Slide 2",
   },
-  // {
-  //   url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-  //   caption: 'Slide 3',
-  // },
   {
     url: "../../images/vitej.jpg",
   },
@@ -48,6 +22,32 @@ const slideImages = [
   },
 ];
 
+const properties = {
+  prevArrow: (
+    <button className={`${styles.sliderArrows} ${styles.leftArrow}`}>
+      <svg
+        width="24"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z" />
+      </svg>
+    </button>
+  ),
+  nextArrow: (
+    <button className={styles.sliderArrows}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z" />
+      </svg>
+    </button>
+  ),
+};
 function getTopics(data) {
   const topicArrays = [];
 
@@ -62,51 +62,63 @@ function getTopics(data) {
     topicArrays.push(...courseTopics);
   }
 
-  console.log(topicArrays);
-
   return topicArrays;
 }
 
 function Slider() {
   const navigate = useNavigate();
   const [topics, setTopics] = useState([]);
+  const [isLoading, setIsLoading] = useState("");
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("../../data/data.json");
+        setIsLoading(true);
+        const res = await fetch("http://localhost:5000/content");
         const data = await res.json();
-        setTopics(getTopics(data.content));
+        setTopics(getTopics(data));
       } catch (err) {
+        //
       } finally {
+        //
+        setIsLoading(false);
       }
     }
     fetchData();
   }, []);
 
   return (
-    <div className="slide-container slider">
-      <Slide>
-        {slideImages.map((slideImage, index) => (
-          <div key={index}>
-            <div
-              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-            >
-              <div className="content" style={{ ...contentStyling }}>
-                <h2 style={{ ...h2Styling }}>{topics[index]?.title}</h2>
-                <p>
-                  <span style={spanStyle}>{topics[index]?.description}</span>
-                </p>
-                <button
-                  className="btn"
-                  onClick={() => navigate(topics[index]?.path)}
-                >
-                  Show More
-                </button>
+    <div>
+      {isLoading && (
+        <div className="absolute top-1/3 left-1/2 translate-x-1/2">
+          <Loader />
+        </div>
+      )}
+      {!isLoading && (
+        <Slide {...properties}>
+          {topics?.map((topic, index) => (
+            <div key={index}>
+              <div
+                className={styles.contentContainer}
+                style={{ backgroundImage: `url(${topic?.image})` }}
+              >
+                <div className={styles.content}>
+                  <p className={styles.title}>{topic?.title}</p>
+                  <p className={styles.description}>
+                    <span>{topic?.description}</span>
+                  </p>
+                  <button
+                    className="btn btn-primary-border-nav"
+                    onClick={() => navigate(topic?.path)}
+                  >
+                    Show More
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slide>
+          ))}
+        </Slide>
+      )}
     </div>
   );
 }

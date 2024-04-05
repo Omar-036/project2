@@ -19,10 +19,8 @@ export default function Categories() {
     fetchContent();
   }, []);
 
-  console.log(content);
-
   return (
-    <div className="h-full z-[10000] group/main">
+    <div className="h-full z-[5000] group/main">
       {/* <Test2 /> */}
       {!content ? <Test2 /> : <Test2 />}
     </div>

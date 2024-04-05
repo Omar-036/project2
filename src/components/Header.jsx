@@ -2,7 +2,7 @@ import SearchBox from "./SearchBox";
 import style from "../style";
 
 import { Logo, Categories, SearchArea, Navbar } from "./index";
-import MyDropdown from "./Dropdown";
+import MyDropdown from "./MyDropdown";
 
 function Header() {
   return (
