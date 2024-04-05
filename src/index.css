@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@import url("./theme/algoliaSearchBox.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h3 {
+    @apply mb-8 text-4xl font-bold  md:text-5xl;
+  }
+
+  h5 {
+    @apply mb-2 text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply text-sm;
+  }
+  .btn-primary-border-nav {
+    @apply text-primary border border-primary hover:text-white hover:bg-primary hover:border-secondary duration-300 focus:outline-none focus:ring-4 font-medium rounded-md text-sm px-4 py-2  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700;
+  }
+  .btn-primary-bg-nav {
+    @apply text-gray-900 hover:text-white bg-gray-800 border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800;
+  }
+  .btn-primary-nonbordered {
+    @apply text-primary  duration-300;
+  }
+}
+
+._dropdown_15ws1_1 {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.bo-scroll::-webkit-scrollbar {
+  width: 1.4em;
+}
+
+.bo-scroll::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+}
+
+.bo-scroll::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 8px solid rgb(35, 56, 118);
+  /* outline: 10px solid slategrey; */
+}
+
+.bo-shadow-bottom {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* 
+.bo-scroll {
+  scrollbar-width: 5px;
+  scrollbar-color: red orange;
+  /* width */
+/* ::-webkit-scrollbar {
+    width: 10px;
+  } */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  } */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+    background: #888;
+  } */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } */
