@@ -7,6 +7,7 @@ import Homepage from "./pages/Homepage";
 import { Header } from "./components";
 import { useState } from "react";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 // const SEARCH_APPLICATION_ID = import.meta.VITE_SEARCH_APPLICATION_ID;
 
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route index={true} element={<Homepage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
