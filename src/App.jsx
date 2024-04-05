@@ -7,7 +7,7 @@ import Homepage from "./pages/Homepage";
 import { Header } from "./components";
 import { useState } from "react";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import { ContentProvider } from "./contexts/ContentContext";
 
 // const SEARCH_APPLICATION_ID = import.meta.VITE_SEARCH_APPLICATION_ID;
 
@@ -21,7 +21,7 @@ const searchClient = algoliasearch(
 function App() {
   const [searchStart, setSearchStart] = useState(false);
   return (
-    <>
+    <ContentProvider>
       <InstantSearch
         searchClient={searchClient}
         indexName="project1"
@@ -36,9 +36,8 @@ function App() {
       <Routes>
         <Route index={true} element={<Homepage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
       </Routes>
-    </>
+    </ContentProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactSearchBox from "react-search-box";
+import { useContent } from "../contexts/ContentContext";
 
 function getTopics(data) {
   const topicArrays = [];
@@ -15,38 +16,11 @@ function getTopics(data) {
     const courseTopics = course.topics || [];
     topicArrays.push(...courseTopics);
   }
-
-  const topicArrayWithKeyAndValue = [];
-
-  for (const topic of topicArrays) {
-    topicArrayWithKeyAndValue.push({
-      ...topic,
-      key: topic.title,
-      value: topic.title,
-    });
-  }
-
-  return topicArrayWithKeyAndValue;
 }
 
 function SearchBox() {
   const navigate = useNavigate();
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch("http://localhost:5000/content");
-        const data = await res.json();
-        setTopics(getTopics(data));
-      } catch (err) {
-        console.log(err);
-      } finally {
-        ("");
-      }
-    }
-    fetchData();
-  }, []);
+  const { topicsWithKeys: topics } = useContent();
 
   return (
     <div className="search flex-1 relative z-10">
