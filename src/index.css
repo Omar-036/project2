@@ -111,3 +111,17 @@ body {
 /* ::-webkit-scrollbar-thumb:hover {
     background: #555;
   } */
+
+.search {
+  position: relative;
+}
+
+.react-search-box-dropdown > ul {
+  position: absolute !important;
+  top: 70px !important;
+  width: 100%;
+}
+
+span:has(> .search-icon) {
+  position: initial;
+}
