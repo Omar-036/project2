@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import Dropdown from "react-multilevel-dropdown";
 import { useNavigate } from "react-router-dom";
+import { useContent } from "../contexts/ContentContext";
 
 function MyDropdown() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [content, setContent] = useState([]);
   const navigate = useNavigate();
+<<<<<<< HEAD
   useEffect(() => {
     async function fetchMenuData() {
       try {
@@ -22,6 +21,9 @@ function MyDropdown() {
     fetchMenuData();
   }, []);
 
+=======
+  const { isLoading, content } = useContent();
+>>>>>>> cbb09e30cf47457dc09f9b567147883ff572520b
   return (
     <div className="dropdown h-full">
       {isLoading && <p>Loading...</p>}

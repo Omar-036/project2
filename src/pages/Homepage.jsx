@@ -4,7 +4,7 @@ function Homepage() {
   return (
     <div>
       <Hero />
-      <Slider />
+      {/* <Slider /> */}
     </div>
   );
 }

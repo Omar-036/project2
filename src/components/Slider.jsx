@@ -4,6 +4,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./Slider.module.css";
 import Loader from "./Loader";
+import { useContent } from "../contexts/ContentContext";
 
 const slideImages = [
   {
@@ -48,44 +49,10 @@ const properties = {
     </button>
   ),
 };
-function getTopics(data) {
-  const topicArrays = [];
-
-  if (typeof data !== "object" || data === null) {
-    return topicArrays;
-  }
-
-  const courses = data || [];
-
-  for (const course of courses) {
-    const courseTopics = course.topics || [];
-    topicArrays.push(...courseTopics);
-  }
-
-  return topicArrays;
-}
 
 function Slider() {
   const navigate = useNavigate();
-  const [topics, setTopics] = useState([]);
-  const [isLoading, setIsLoading] = useState("");
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        const res = await fetch("http://localhost:5000/content");
-        const data = await res.json();
-        setTopics(getTopics(data));
-      } catch (err) {
-        //
-      } finally {
-        //
-        setIsLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+  const { isLoading, topics } = useContent();
 
   return (
     <div>

@@ -1,0 +1,47 @@
+.recentActions {
+  padding: 0 0 60px;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.actionsContainer {
+  padding: 10px 40px;
+  display: flex;
+	align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.action {
+  display: flex;
+	gap: 15px;
+  box-shadow: 0 0 4px 0px #00000062;
+  /* padding: 20px; */
+	width: 430px;
+  background-color: #ffffff;
+  border-radius: 5px;
+	overflow: hidden;
+}
+
+.content {
+  /* margin-left: 15px; */
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.description {
+  word-break: break-all;
+  font-size: 15px;
+  color: #222;
+  margin-top: 10px;
+}

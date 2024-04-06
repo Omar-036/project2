@@ -1,39 +1,32 @@
+/* eslint-disable react/prop-types */
+// import ReactSearchBox from "react-search-box";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ReactSearchBox from "react-search-box";
+import { useContent } from "../contexts/ContentContext";
+import styles from "./SearchBox.module.css";
 
-function getTopics(data) {
-  const topicArrays = [];
-
-  if (typeof data !== "object" || data === null) {
-    return topicArrays;
-  }
-
-  const courses = data || [];
-
-  for (const course of courses) {
-    const courseTopics = course.topics || [];
-    topicArrays.push(...courseTopics);
-  }
-
-  const topicArrayWithKeyAndValue = [];
-
-  for (const topic of topicArrays) {
-    topicArrayWithKeyAndValue.push({
-      ...topic,
-      key: topic.title,
-      value: topic.title,
-    });
-  }
-
-  return topicArrayWithKeyAndValue;
-}
-
-function SearchBox() {
+function SearchBox({ placeholder, rightIcon }) {
   const navigate = useNavigate();
-  const [topics, setTopics] = useState([]);
+  // const { topicsWithKeys: topics } = useContent();
+  const { topics } = useContent();
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [isFocus, setIsFocus] = useState(false);
+  // const [showResults, setShowResults] = useState(false);
+  function handleSearch(e) {
+    const newQuery = e.target.value.toLowerCase().trimStart();
+    setQuery(newQuery);
+    setResults(
+      topics.filter(
+        (topic) =>
+          topic.title.toLowerCase().includes(newQuery) && newQuery !== ""
+      )
+    );
+    setIsFocus(true);
+  }
 
   useEffect(() => {
+<<<<<<< HEAD
     async function fetchData() {
       try {
         const res = await fetch("http://localhost:5000/content");
@@ -44,12 +37,66 @@ function SearchBox() {
         console.log(err);
       } finally {
         ("");
+=======
+    const event = document.addEventListener("click", (e) => {
+      if (
+        e.target.classList.contains("list") ||
+        e.target.classList.contains("search")
+      ) {
+        setIsFocus(true);
+      } else {
+        setIsFocus(false);
+>>>>>>> cbb09e30cf47457dc09f9b567147883ff572520b
       }
-    }
-    fetchData();
-  }, []);
+    });
+
+    return () => removeEventListener("click", event);
+  }, [isFocus]);
 
   return (
+    <div className="search flex-1 relative z-10">
+      <div className="input">
+        <input
+          type="text"
+          placeholder={placeholder}
+          className="w-full search"
+          value={query}
+          onChange={handleSearch}
+          onFocus={() => setIsFocus(true)}
+        />
+      </div>
+      <div className="search-icon absolute right-2 top-3">{rightIcon}</div>
+
+      <div className={`${styles.resultsContainer} absolute left-0 mt-2 w-full`}>
+        <ul>
+          {isFocus &&
+            results.map((result) => (
+              <li
+                key={result.title}
+                className={`${styles.results} list`}
+                onClick={() => {
+                  navigate(result.path);
+                  setQuery("");
+                  setResults([]);
+                }}
+              >
+                {result.title}
+              </li>
+            ))}
+
+          {results.length === 0 && query.length > 0 && isFocus && (
+            <p className={styles.results}>no results</p>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default SearchBox;
+
+/*
+
     <div className="search flex-1 relative z-10">
       <ReactSearchBox
         clearOnSelect
@@ -77,7 +124,5 @@ function SearchBox() {
         onFocus={(e) => console.log(e.target)}
       />
     </div>
-  );
-}
 
-export default SearchBox;
+*/
