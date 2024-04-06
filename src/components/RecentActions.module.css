@@ -13,25 +13,25 @@
 .actionsContainer {
   padding: 10px 40px;
   display: flex;
-	align-items: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .action {
   display: flex;
-	gap: 15px;
+  gap: 15px;
   box-shadow: 0 0 4px 0px #00000062;
   /* padding: 20px; */
-	width: 430px;
+  width: 430px;
   background-color: #ffffff;
   border-radius: 5px;
-	overflow: hidden;
+  overflow: hidden;
 }
 
-.content {
-  /* margin-left: 15px; */
-}
+/* .content {
+   margin-left: 15px; 
+} */
 
 .title {
   margin-top: 10px;

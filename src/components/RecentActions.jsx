@@ -9,7 +9,6 @@ function RecentActions() {
     getActions("ali", "123456");
   }, [getActions]);
 
-  console.log(recentActions);
 
   return (
     <div className={`${styles.recentActions}`}>
@@ -36,3 +35,4 @@ function RecentActions() {
 }
 
 export default RecentActions;
+
