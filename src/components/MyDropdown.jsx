@@ -24,9 +24,10 @@ function MyDropdown() {
   }, []);
 
   return (
-    <div className="dropdown h-full">
-      {isLoading && <Loader />}
-      {!isLoading && (
+    <div className="dropdown h-full ">
+      {isLoading ? (
+        <Loader />
+      ) : (
         <Dropdown
           className="h-full  text-sm"
           title="Categories"

@@ -7,7 +7,7 @@ import MyDropdown from "./MyDropdown";
 function Header() {
   return (
     <header
-      className={`${style.paddingX} flex gap-x-4 w-full items-center h-20 bo-shadow-bottom`}
+      className={`${style.paddingX} flex gap-x-4 w-full items-center h-20 shadow-[0_0px_10px_-4px_rgba(0,0,0,0.3)]`}
     >
       <Logo />
       <MyDropdown />

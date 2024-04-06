@@ -35,6 +35,12 @@
   height: 100%;
 }
 
+.sc-bcXHqe {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
 *,
 *::before,
 *::after {

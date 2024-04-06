@@ -10,7 +10,7 @@ function MyDropdown() {
     async function fetchMenuData() {
       try {
         setIsLoading(true);
-        const res = await fetch("http://localhost:5000/content");
+        const res = await fetch("../../data/data.json");
         const data = await res.json();
         setContent(data.content);
       } catch (err) {

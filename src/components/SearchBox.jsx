@@ -38,6 +38,7 @@ function SearchBox() {
       try {
         const res = await fetch("http://localhost:5000/content");
         const data = await res.json();
+        console.log(data);
         setTopics(getTopics(data));
       } catch (err) {
         console.log(err);
