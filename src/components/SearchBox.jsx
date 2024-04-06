@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // import ReactSearchBox from "react-search-box";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContent } from "../contexts/ContentContext";
 import styles from "./SearchBox.module.css";
@@ -12,7 +12,7 @@ function SearchBox({ placeholder, rightIcon }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
-
+  // const [showResults, setShowResults] = useState(false);
   function handleSearch(e) {
     const newQuery = e.target.value.toLowerCase().trimStart();
     setQuery(newQuery);
@@ -25,17 +25,31 @@ function SearchBox({ placeholder, rightIcon }) {
     setIsFocus(true);
   }
 
+  useEffect(() => {
+    const event = document.addEventListener("click", (e) => {
+      if (
+        e.target.classList.contains("list") ||
+        e.target.classList.contains("search")
+      ) {
+        setIsFocus(true);
+      } else {
+        setIsFocus(false);
+      }
+    });
+
+    return () => removeEventListener("click", event);
+  }, [isFocus]);
+
   return (
     <div className="search flex-1 relative z-10">
       <div className="input">
         <input
           type="text"
           placeholder={placeholder}
-          className="w-full"
+          className="w-full search"
           value={query}
           onChange={handleSearch}
           onFocus={() => setIsFocus(true)}
-          onBlur={() => setIsFocus(false)}
         />
       </div>
       <div className="search-icon absolute right-2 top-3">{rightIcon}</div>
@@ -46,7 +60,7 @@ function SearchBox({ placeholder, rightIcon }) {
             results.map((result) => (
               <li
                 key={result.title}
-                className={styles.results}
+                className={`${styles.results} list`}
                 onClick={() => {
                   navigate(result.path);
                   setQuery("");
