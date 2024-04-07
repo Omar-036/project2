@@ -1,24 +1,22 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from 'react';
+
 
 const UsersContext = createContext();
 
 function UsersProvider({ children }) {
-  const [users, setUsers] = useState(null);
+  const [users, setUsers] = useState([]);
   const [recentActions, setRecentActions] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
-  function getActions(username, password) {
-    const user = users.filter(
-      (user) => user.username === username && user.password === password
-    )[0];
+  function getActions(id) {
+    const user = users.filter(user => user.id === id)[0];
 
-    setRecentActions(() => user.recentAction);
+    setRecentActions(user?.recentAction);
   }
 
   useEffect(() => {
     async function getUsers() {
-      const res = await fetch("http://localhost:5001/users");
+      const res = await fetch('http://localhost:5001/users');
       const data = await res.json();
       setUsers(data);
     }
@@ -26,7 +24,7 @@ function UsersProvider({ children }) {
   }, []);
 
   return (
-    <UsersContext.Provider value={{ recentActions, getActions }}>
+    <UsersContext.Provider value={{ users, recentActions, getActions }}>
       {children}
     </UsersContext.Provider>
   );
@@ -35,7 +33,7 @@ function UsersProvider({ children }) {
 function useUsers() {
   const context = useContext(UsersContext);
   if (context === undefined)
-    throw new Error("Users context was used outside the UsersProvider");
+    throw new Error('Users context was used outside the UsersProvider');
   return context;
 }
 

@@ -26,18 +26,6 @@ function SearchBox({ placeholder, rightIcon }) {
   }
 
   useEffect(() => {
-<<<<<<< HEAD
-    async function fetchData() {
-      try {
-        const res = await fetch("http://localhost:5000/content");
-        const data = await res.json();
-        console.log(data);
-        setTopics(getTopics(data));
-      } catch (err) {
-        console.log(err);
-      } finally {
-        ("");
-=======
     const event = document.addEventListener("click", (e) => {
       if (
         e.target.classList.contains("list") ||
@@ -46,7 +34,6 @@ function SearchBox({ placeholder, rightIcon }) {
         setIsFocus(true);
       } else {
         setIsFocus(false);
->>>>>>> cbb09e30cf47457dc09f9b567147883ff572520b
       }
     });
 

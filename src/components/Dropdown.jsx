@@ -4,26 +4,7 @@ import { useContent } from "../contexts/ContentContext";
 
 function MyDropdown() {
   const navigate = useNavigate();
-<<<<<<< HEAD
-  useEffect(() => {
-    async function fetchMenuData() {
-      try {
-        setIsLoading(true);
-        const res = await fetch("../../data/data.json");
-        const data = await res.json();
-        setContent(data.content);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchMenuData();
-  }, []);
-
-=======
   const { isLoading, content } = useContent();
->>>>>>> cbb09e30cf47457dc09f9b567147883ff572520b
   return (
     <div className="dropdown h-full">
       {isLoading && <p>Loading...</p>}

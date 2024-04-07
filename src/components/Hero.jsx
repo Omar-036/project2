@@ -1,11 +1,15 @@
-import RecentActions from "./RecentActions";
-import { Slider } from "./index";
+import { useAuth } from '../contexts/AuthContext';
+import RecentActions from './RecentActions';
+import Topics from './Topics';
+import { Slider } from './index';
 
 function Hero() {
+  const { isAuthenticated } = useAuth();
   return (
     <div>
       <Slider />
-      <RecentActions />
+      {isAuthenticated && <RecentActions />}
+      <Topics />
     </div>
   );
 }
