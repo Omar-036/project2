@@ -46,7 +46,7 @@ function SearchBox({ placeholder, rightIcon }) {
         <input
           type="text"
           placeholder={placeholder}
-          className="w-full search"
+          className="w-full search border-2 duration-100 focus:outline-none focus:border-secondary  rounded-lg "
           value={query}
           onChange={handleSearch}
           onFocus={() => setIsFocus(true)}
@@ -54,28 +54,33 @@ function SearchBox({ placeholder, rightIcon }) {
       </div>
       <div className="search-icon absolute right-2 top-3">{rightIcon}</div>
 
-      <div className={`${styles.resultsContainer} absolute left-0 mt-2 w-full`}>
-        <ul>
-          {isFocus &&
-            results.map((result) => (
-              <li
-                key={result.title}
-                className={`${styles.results} list`}
-                onClick={() => {
-                  navigate(result.path);
-                  setQuery("");
-                  setResults([]);
-                }}
-              >
-                {result.title}
-              </li>
-            ))}
+      {isFocus && (
+        <div
+          className={`${styles.resultsContainer} absolute left-0 mt-4 w-full `}
+        >
+          <ul>
+            {isFocus &&
+              results.map((result) => (
+                <li
+                  key={result.title}
+                  className={`${styles.results} flex justify-between items-center list hover:bg-gray-100 duration-200`}
+                  onClick={() => {
+                    navigate(result.path);
+                    setQuery("");
+                    setResults([]);
+                  }}
+                >
+                  {result.title}
+                  <img src={result?.image} alt=">" className="w-20 h-16" />
+                </li>
+              ))}
 
-          {results.length === 0 && query.length > 0 && isFocus && (
-            <p className={styles.results}>no results</p>
-          )}
-        </ul>
-      </div>
+            {results.length === 0 && query.length > 0 && isFocus && (
+              <p className={styles.results}>no results</p>
+            )}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

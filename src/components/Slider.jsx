@@ -1,34 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Slide } from "react-slideshow-image";
+import { Fade, Slide, Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./Slider.module.css";
 import Loader from "./Loader";
 import { useContent } from "../contexts/ContentContext";
 
-const slideImages = [
-  {
-    url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    caption: "Slide 1",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    caption: "Slide 2",
-  },
-  {
-    url: "../../images/vitej.jpg",
-  },
-  {
-    url: "../../images/vite2.png",
-  },
-];
-
 const properties = {
   prevArrow: (
     <button className={`${styles.sliderArrows} ${styles.leftArrow}`}>
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -40,8 +23,8 @@ const properties = {
     <button className={styles.sliderArrows}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
       >
         <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z" />
@@ -56,30 +39,41 @@ function Slider() {
 
   return (
     <div>
-      {isLoading && (
-        <div className="absolute top-1/3 left-1/2 translate-x-1/2">
+      {isLoading ? (
+        <div className="min-h-[60vh] flex items-center justify-center">
           <Loader />
         </div>
-      )}
-      {!isLoading && (
-        <Slide {...properties}>
+      ) : (
+        <Slide
+          {...properties}
+          duration={2500}
+          transitionDuration={900}
+          autoplay={true}
+        >
           {topics?.map((topic, index) => (
             <div key={index}>
               <div
                 className={styles.contentContainer}
                 style={{ backgroundImage: `url(${topic?.image})` }}
               >
-                <div className={styles.content}>
-                  <p className={styles.title}>{topic?.title}</p>
-                  <p className={styles.description}>
-                    <span>{topic?.description}</span>
-                  </p>
-                  <button
-                    className="btn btn-primary-border-nav"
-                    onClick={() => navigate(topic?.path)}
-                  >
-                    Show More
-                  </button>
+                <div className={`${styles.content} h-full`}>
+                  <div className="flex  flex-col h-full gap-y-8 justify-center w-100% md:max-w-[50%]">
+                    {" "}
+                    <p
+                      className={`${styles.title} text-6xl font-bold capitalize text-gradient `}
+                    >
+                      {topic?.title}
+                    </p>
+                    <p className={`${styles.description} text-dimWhite`}>
+                      <span>{topic?.description}</span>
+                    </p>
+                    <button
+                      className=" bg-white px-8 py-4 rounded w-fit text-sm font-semibold hover:opacity-90 duration-200 text-primary inline-block bg-blue-gradient"
+                      onClick={() => navigate(topic?.path)}
+                    >
+                      Show More
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

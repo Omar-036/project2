@@ -25,8 +25,9 @@ function MyDropdown() {
 
   return (
     <div className="dropdown h-full">
-      {isLoading && <Loader />}
-      {!isLoading && (
+      {isLoading ? (
+        <Loader width={"12px"} height={"12px"} />
+      ) : (
         <Dropdown
           className="h-full  text-sm"
           title="Categories"

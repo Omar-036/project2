@@ -1,15 +1,4 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "omar",
-      "email": "oesam@gmail.com",
-      "password": "123456",
-      "role": "admin",
-      "picture": "",
-      "recentAction": [{}, {}]
-    }
-  ],
   "content": [
     {
       "id": 1,
@@ -24,7 +13,7 @@
           "path": "/data-structure/linked-list",
           "description": "plaplapl",
           "lastEditDate": "12/12/2024",
-          "image": "",
+          "image": "https://source.unsplash.com/VyjSaecJl34",
           "slides": {},
           "quizes": {}
         },
@@ -34,9 +23,9 @@
           "author": "admin",
           "length": "3600s",
           "path": "/data-structure/double-linked-list",
-          "description": "plaplapl",
+          "description": "Skills for your present (and your future). Get started with us.",
           "lastEditDate": "12/12/2024",
-          "image": "",
+          "image": "https://source.unsplash.com/DebjBofD8GU",
           "slides": {},
           "quizes": {}
         }
