@@ -26,6 +26,19 @@ function SearchBox({ placeholder, rightIcon }) {
   }
 
   useEffect(() => {
+<<<<<<< HEAD
+=======
+    async function fetchData() {
+      try {
+        const res = await fetch("http://localhost:5000/content");
+        const data = await res.json();
+        console.log(data);
+        setTopics(getTopics(data));
+      } catch (err) {
+        console.log(err);
+      } finally {
+        ("");
+>>>>>>> 25796b2bd18bf79b518ce4c344503969f4a11579
     const event = document.addEventListener("click", (e) => {
       if (
         e.target.classList.contains("list") ||
