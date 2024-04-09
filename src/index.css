@@ -47,6 +47,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.bo-padding {
+  padding: 4rem 3rem;
+}
+
 /* main {
   background: #00f6ff;
 } */

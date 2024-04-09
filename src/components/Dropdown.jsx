@@ -18,11 +18,15 @@ function MyDropdown() {
           position="right"
         >
           {content.map((info) => (
-            <Dropdown.Item key={info.title} className="shadow-none">
+            <Dropdown.Item
+              key={info.title}
+              className="shadow-none border-b  last:border-b-0"
+            >
               {info.title}
               <Dropdown.Submenu position="right">
                 {info.topics.map((topic) => (
                   <Dropdown.Item
+                    className="border-b  last:border-b-0"
                     key={topic.title}
                     onClick={() => navigate(topic.path)}
                   >

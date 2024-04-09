@@ -28,14 +28,13 @@ function App() {
       <UsersProvider>
         <ContentProvider>
           <Header searchStart={searchStart} />
-          <main>
-            <Routes>
-              <Route index={true} element={<Homepage />} />
-              <Route path="/:id" element={<Homepage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/sign-up" element={<Signup />} />
-            </Routes>
-          </main>
+
+          <Routes>
+            <Route index={true} element={<Homepage />} />
+            <Route path="/:id" element={<Homepage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<Signup />} />
+          </Routes>
         </ContentProvider>
       </UsersProvider>
     </AuthProvider>

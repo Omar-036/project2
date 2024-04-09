@@ -3,7 +3,7 @@ import styles from "./Topics.module.css";
 function Topics() {
   const { topics } = useContent();
   return (
-    <div className="py-12 px-8">
+    <div className="">
       <div className="mb-4">
         <h2 className="text-2xl font-bold">All Topics</h2>
       </div>

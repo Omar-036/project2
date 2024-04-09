@@ -3,6 +3,7 @@ import style from "../style";
 
 import { Logo, SearchArea, Navbar } from "./index";
 import MyDropdown from "./MyDropdown";
+import Dropdown from "./Dropdown";
 import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
@@ -11,7 +12,7 @@ function Header() {
       className={`${style.paddingX} flex gap-x-4 w-full items-center h-20 shadow-[0px_5px_30px_-20px_rgba(0,0,0,1)] `}
     >
       <Logo />
-      <MyDropdown />
+      <Dropdown />
       <SearchBox
         placeholder="Search for any topic..."
         rightIcon={
