@@ -47,6 +47,21 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* main {
+  background: #00f6ff;
+} */
+
+.bg-primary-gradient {
+  background: linear-gradient(to bottom, #00040f, #00f6ff);
+}
+.bg-primary-gradient-to-right {
+  background: linear-gradient(to right, #00040f, #00f6ff);
+}
+
+.h-minHeader {
+  height: calc(100vh - 5rem);
+}
+
 :root {
   --black-gradient: linear-gradient(
     144.39deg,

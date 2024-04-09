@@ -27,23 +27,15 @@ function App() {
     <AuthProvider>
       <UsersProvider>
         <ContentProvider>
-          <InstantSearch
-            searchClient={searchClient}
-            indexName="project1"
-            initialUiState={{
-              project1: {
-                query: "",
-              },
-            }}
-          >
-            <Header searchStart={searchStart} />
-          </InstantSearch>
-          <Routes>
-            <Route index={true} element={<Homepage />} />
-            <Route path="/:id" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/sign-up" element={<Signup />} />
-          </Routes>
+          <Header searchStart={searchStart} />
+          <main>
+            <Routes>
+              <Route index={true} element={<Homepage />} />
+              <Route path="/:id" element={<Homepage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/sign-up" element={<Signup />} />
+            </Routes>
+          </main>
         </ContentProvider>
       </UsersProvider>
     </AuthProvider>
