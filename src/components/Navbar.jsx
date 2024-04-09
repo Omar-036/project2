@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
@@ -22,7 +22,9 @@ function Navbar() {
             <Link to="/login" className="btn btn-primary-border-nav">
               Log in
             </Link>
-            <Link className="btn btn-primary-border-nav">Sign up</Link>
+            <Link to="/sign-up" className="btn btn-primary-border-nav">
+              Sign up
+            </Link>
           </>
         )}
       </div>
