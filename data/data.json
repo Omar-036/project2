@@ -1,0 +1,99 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "title": "data structure",
+      "descritopn": "descritopn",
+      "topics": [
+        {
+          "id": 1,
+          "title": "stack",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/stack",
+          "description": "In computer science, a stack is a fundamental data structure that operates on a last-in, first-out (LIFO) principle.",
+          "lastEditDate": "12/12/2024",
+          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "slides": {},
+          "quize": {
+            "title": "Stack Data Structure Quiz",
+            "description": "Test your knowledge of stack data structure!"
+          }
+        },
+        {
+          "id": 2,
+          "title": "queue",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/queue",
+          "description": "",
+          "lastEditDate": "12/12/2024",
+          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "slides": {},
+          "quiz": {
+            "title": "",
+            "description": ""
+          }
+        },
+        {
+          "id": 3,
+          "title": "linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/linked-list",
+          "description": "A linked list is a linear data structure where elements, called nodes, are connected via pointers. It allows for flexible memory allocation and efficient insertion/deletion operations.",
+          "lastEditDate": "12/12/2024",
+          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "slides": {},
+          "quiz": {
+            "title": "Stack and Linked List Quiz",
+            "description": "Test your knowledge of stack and linked list data structures!"
+          }
+        },
+        {
+          "id": 4,
+          "title": "double linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/double-linked-list",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "https://source.unsplash.com/DebjBofD8GU",
+          "slides": {},
+          "quize": {}
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "algorithms",
+      "descritopn": "descritopn",
+      "topics": [
+        {
+          "id": 1,
+          "title": "red black tree",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/algorithms/red-black-tree",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quize": {}
+        },
+        {
+          "id": 2,
+          "title": "matrix chain multiplication",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/algorithms/matrix-chain-multiplication",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quize": {}
+        }
+      ]
+    }
+  ]
+}

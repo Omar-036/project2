@@ -1,0 +1,44 @@
+.contentContainer {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 70vh;
+  position: relative;
+  width: 100%;
+}
+
+.content {
+  padding: 0px 0 40px 120px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 4, 15, 0.9) 45%,
+    rgba(0, 246, 255, 0.5)
+  );
+}
+
+/* .title {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.description {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #777;
+} */
+
+.sliderArrows {
+  padding: 10px;
+  background: rgba(50, 50, 50, 0.8);
+  fill: white;
+  border: 0px;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.leftArrow {
+  rotate: 180deg;
+}

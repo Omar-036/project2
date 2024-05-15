@@ -1,0 +1,21 @@
+.container {
+  width: 1200px;
+  padding: 50px 15px 120px;
+  margin: auto;
+}
+
+.nestedContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.topic {
+  box-shadow: 0 0 4px 0px #00000062;
+  text-align: center;
+  min-width: 50%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}

@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "omar",
+      "email": "oesam@gmail.com",
+      "password": "123456",
+      "role": "admin",
+      "picture": "",
+      "recentAction": [
+        {
+          "id": 1,
+          "title": "linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/linked-list",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        },
+        {
+          "id": 1,
+          "title": "double linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/double-linked-list",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "username": "ali",
+      "email": "oesam2@gmail.com",
+      "password": "123456",
+      "role": "admin",
+      "picture": "",
+      "recentAction": [
+        {
+          "id": 1,
+          "title": "red black tree",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/algorithms/red-black-tree",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        },
+        {
+          "id": 2,
+          "title": "matrix chain multiplication",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/algorithms/matrix-chain-multiplication",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        }
+      ]
+    },
+    {
+      "id": "b318",
+      "username": "omar",
+      "email": "oesam3@gmail.com",
+      "password": "123456",
+      "role": "admin",
+      "picture": "",
+      "recentAction": [
+        {
+          "id": 1,
+          "title": "linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/linked-list",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        },
+        {
+          "id": 1,
+          "title": "double linked list",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/double-linked-list",
+          "description": "plaplapl",
+          "lastEditDate": "12/12/2024",
+          "image": "",
+          "slides": {},
+          "quizes": {}
+        }
+      ]
+    }
+  ]
+}
