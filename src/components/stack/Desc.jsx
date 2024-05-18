@@ -61,6 +61,9 @@ class StackDescription extends React.Component {
             let size = stack.length; // size === 2
             `}
           </pre>
+          <div>
+            <img className=" w-full h-[500px]" src="../../stack.gif" alt="" />
+          </div>
         </div>
       </div>
     );

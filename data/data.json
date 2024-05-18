@@ -13,7 +13,7 @@
           "path": "/data-structure/stack",
           "description": "In computer science, a stack is a fundamental data structure that operates on a last-in, first-out (LIFO) principle.",
           "lastEditDate": "12/12/2024",
-          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "image": "stack.gif",
           "slides": {},
           "quize": {
             "title": "Stack Data Structure Quiz",
@@ -26,9 +26,9 @@
           "author": "admin",
           "length": "3600s",
           "path": "/data-structure/queue",
-          "description": "",
+          "description": "A queue is a FIFO (First In, First Out) data structure where elements are added at the rear and removed from the front.",
           "lastEditDate": "12/12/2024",
-          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "image": "queue.gif",
           "slides": {},
           "quiz": {
             "title": "",
@@ -43,7 +43,7 @@
           "path": "/data-structure/linked-list",
           "description": "A linked list is a linear data structure where elements, called nodes, are connected via pointers. It allows for flexible memory allocation and efficient insertion/deletion operations.",
           "lastEditDate": "12/12/2024",
-          "image": "https://source.unsplash.com/VyjSaecJl34",
+          "image": "linked-list.gif",
           "slides": {},
           "quiz": {
             "title": "Stack and Linked List Quiz",
@@ -58,7 +58,7 @@
           "path": "/data-structure/double-linked-list",
           "description": "plaplapl",
           "lastEditDate": "12/12/2024",
-          "image": "https://source.unsplash.com/DebjBofD8GU",
+          "image": "double-linked.jpg",
           "slides": {},
           "quize": {}
         }

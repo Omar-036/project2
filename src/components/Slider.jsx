@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
-import styles from './Slider.module.css';
-import Loader from './Loader';
-import { useContent } from '../contexts/ContentContext';
+import { useNavigate } from "react-router-dom";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import styles from "./Slider.module.css";
+import Loader from "./Loader";
+import { useContent } from "../contexts/ContentContext";
 
 const properties = {
   prevArrow: (
@@ -45,7 +45,7 @@ function Slider() {
       ) : (
         <Slide
           {...properties}
-          duration={2500}
+          duration={10000}
           transitionDuration={900}
           autoplay={true}
         >
@@ -57,7 +57,7 @@ function Slider() {
               >
                 <div className={`${styles.content} h-full`}>
                   <div className="flex  flex-col h-full gap-y-8 justify-center w-100% md:max-w-[50%]">
-                    {' '}
+                    {" "}
                     <p
                       className={`${styles.title} text-6xl font-bold capitalize text-gradient `}
                     >

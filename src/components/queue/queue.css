@@ -1,0 +1,19 @@
+/* queue.css */
+.animate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -118,6 +118,13 @@ class LinkedListDescription extends React.Component {
             linkedList.traverse();
             `}
           </pre>
+          <div>
+            <img
+              className=" w-full h-[500px]"
+              src="../../linked-list.gif"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     );

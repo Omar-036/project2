@@ -62,6 +62,9 @@ class QueueDescription extends React.Component {
             let size = queue.length; // size === 2
             `}
           </pre>
+          <div>
+            <img className=" w-full h-[500px]" src="../../queue.gif" alt="" />
+          </div>
         </div>
       </div>
     );

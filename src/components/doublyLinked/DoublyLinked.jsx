@@ -3,7 +3,7 @@ import QueueDescription from "./Desc";
 import Quiz from "../Quiz";
 import WorkArea from "./WorkArea";
 
-const Queue = () => {
+const DoublyLinked = () => {
   const [isOpen, setIsOpen] = useState(false);
   const quizData = {
     quiz: {
@@ -116,4 +116,4 @@ const Queue = () => {
   );
 };
 
-export default Queue;
+export default DoublyLinked;
