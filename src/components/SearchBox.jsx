@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
 // import ReactSearchBox from "react-search-box";
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useContent } from '../contexts/ContentContext';
-import styles from './SearchBox.module.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContent } from "../contexts/ContentContext";
+import styles from "./SearchBox.module.css";
 
 function SearchBox({ placeholder, rightIcon }) {
   const navigate = useNavigate();
   // const { topicsWithKeys: topics } = useContent();
   const { topics } = useContent();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
   // const [showResults, setShowResults] = useState(false);
@@ -18,17 +18,18 @@ function SearchBox({ placeholder, rightIcon }) {
     setQuery(newQuery);
     setResults(
       topics.filter(
-        topic => topic.title.toLowerCase().includes(newQuery) && newQuery !== ''
+        (topic) =>
+          topic.title.toLowerCase().includes(newQuery) && newQuery !== ""
       )
     );
     setIsFocus(true);
   }
 
   useEffect(() => {
-    const event = document.addEventListener('click', e => {
+    const event = document.addEventListener("click", (e) => {
       if (
-        e.target.classList.contains('list') ||
-        e.target.classList.contains('search')
+        e.target.classList.contains("list") ||
+        e.target.classList.contains("search")
       ) {
         setIsFocus(true);
       } else {
@@ -36,12 +37,12 @@ function SearchBox({ placeholder, rightIcon }) {
       }
     });
 
-    return () => removeEventListener('click', event);
+    return () => removeEventListener("click", event);
   }, [isFocus]);
 
   return (
     <div className="search flex-1 relative z-10">
-      <div className="input">
+      <div className="">
         <input
           type="text"
           placeholder={placeholder}
@@ -59,13 +60,13 @@ function SearchBox({ placeholder, rightIcon }) {
         >
           <ul>
             {isFocus &&
-              results.map(result => (
+              results.map((result) => (
                 <li
                   key={result.title}
                   className={`${styles.results} flex justify-between items-center list hover:bg-gray-100 duration-200`}
                   onClick={() => {
                     navigate(result.path);
-                    setQuery('');
+                    setQuery("");
                     setResults([]);
                   }}
                 >

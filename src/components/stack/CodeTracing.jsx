@@ -25,10 +25,16 @@ const CodeTracing = ({ operation }) => {
         ]);
         break;
       case "pop":
-        setData(["1", "2", "3"]);
+        setData([
+          "1. Checks if the stack is empty.",
+          "2. If the stack is empty, produces an error and exit.",
+          "3. If the stack is not empty, accesses the data element at which top is pointing.",
+          "4. Decreases the value of top by 1.",
+          "5. Returns success.",
+        ]);
         break;
       default:
-        setData(["heloo", "heo"]);
+        setData([]);
     }
   }, [operation]);
 
@@ -37,7 +43,7 @@ const CodeTracing = ({ operation }) => {
       // Set up an interval to change the currentIndex every second
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 1000);
+      }, 1500);
 
       // Clear the interval on component unmount or when data changes
       return () => clearInterval(interval);
@@ -48,9 +54,11 @@ const CodeTracing = ({ operation }) => {
     <div className="w-96">
       {data.map((item, index) => (
         <p
+          className="p-2 rounded"
           key={index}
           style={{
-            backgroundColor: currentIndex === index ? "red" : "transparent",
+            backgroundColor: currentIndex === index ? "gold" : "transparent",
+            color: currentIndex === index ? "black" : "white",
           }}
         >
           {item}

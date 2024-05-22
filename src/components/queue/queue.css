@@ -1,19 +1,124 @@
-/* queue.css */
-.animate-container {
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.enqueue-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.enqueue-button:hover {
+  background-color: #45a049;
+}
+
+.dequeue-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.dequeue-button:hover {
+  background-color: #da190b;
+}
+
+.queue-container {
+  margin-top: 20px;
+}
+
+.queue {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.5s;
+.queue-item {
+  position: relative;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
 }
 
-@keyframes fadeIn {
+.queue-item.enqueue {
+  animation: slideIn 0.5s forwards;
+}
+
+.queue-item.dequeue {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
   from {
+    transform: translateX(-50px);
     opacity: 0;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
   }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes dequeueAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.queue-item.dequeue {
+  animation: dequeueAnimation 0.5s forwards;
+}
+
+.label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.head .label {
+  background-color: #007bff;
+}
+
+.tail .label {
+  background-color: #ff9900;
+}
+
+.empty-queue {
+  font-size: 18px;
+  color: #999;
 }

@@ -15,6 +15,9 @@ import Stack from "./components/stack/Stack";
 import Linkedlist from "./components/linkedlist/Linkedlist";
 import Footer from "./components/Footer";
 import Queue from "./components/queue/Queue";
+import DoublyLinked from "./components/doublyLinked/DoublyLinked";
+import BinaryTree from "./components/binaryTree/BinaryTree";
+import Array from "./components/array/array";
 
 // const SEARCH_APPLICATION_ID = import.meta.VITE_SEARCH_APPLICATION_ID;
 
@@ -41,9 +44,18 @@ function App() {
             <Route path="/data-structure/stack" element={<Stack />} />
             <Route path="/data-structure/queue" element={<Queue />} />
             <Route
+              path="/data-structure/double-linked-list"
+              element={<DoublyLinked />}
+            />
+            <Route
               path="/data-structure/linked-list"
               element={<Linkedlist />}
             />
+            <Route
+              path="/data-structure/binary-tree"
+              element={<BinaryTree />}
+            />
+            <Route path="/data-structure/array" element={<Array />} />
           </Routes>
           <Footer />
         </ContentProvider>

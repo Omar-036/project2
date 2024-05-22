@@ -45,7 +45,7 @@ function Slider() {
       ) : (
         <Slide
           {...properties}
-          duration={10000}
+          duration={5000}
           transitionDuration={900}
           autoplay={true}
         >

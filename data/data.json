@@ -6,6 +6,21 @@
       "descritopn": "descritopn",
       "topics": [
         {
+          "id": 0,
+          "title": "Array",
+          "author": "admin",
+          "length": "3600s",
+          "path": "/data-structure/array",
+          "description": "An array is a collection of elements stored at contiguous memory locations, allowing efficient indexing.",
+          "lastEditDate": "12/12/2024",
+          "image": "array.jpg",
+          "slides": {},
+          "quize": {
+            "title": "Stack Data Structure Quiz",
+            "description": "Test your knowledge of stack data structure!"
+          }
+        },
+        {
           "id": 1,
           "title": "stack",
           "author": "admin",
@@ -56,40 +71,21 @@
           "author": "admin",
           "length": "3600s",
           "path": "/data-structure/double-linked-list",
-          "description": "plaplapl",
+          "description": "A doubly linked list is a sequence of elements where each element has pointers to both the next and previous elements, enabling bidirectional traversal.",
           "lastEditDate": "12/12/2024",
           "image": "double-linked.jpg",
           "slides": {},
           "quize": {}
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "algorithms",
-      "descritopn": "descritopn",
-      "topics": [
-        {
-          "id": 1,
-          "title": "red black tree",
-          "author": "admin",
-          "length": "3600s",
-          "path": "/algorithms/red-black-tree",
-          "description": "plaplapl",
-          "lastEditDate": "12/12/2024",
-          "image": "",
-          "slides": {},
-          "quize": {}
         },
         {
-          "id": 2,
-          "title": "matrix chain multiplication",
+          "id": 5,
+          "title": "Binary Tree",
           "author": "admin",
           "length": "3600s",
-          "path": "/algorithms/matrix-chain-multiplication",
-          "description": "plaplapl",
+          "path": "/data-structure/binary-tree",
+          "description": "A binary tree is a hierarchical structure where each node has at most two children, enabling efficient data storage and retrieval.",
           "lastEditDate": "12/12/2024",
-          "image": "",
+          "image": "binary-tree.gif",
           "slides": {},
           "quize": {}
         }

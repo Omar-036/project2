@@ -208,7 +208,7 @@ const WorkArea = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter value to add"
-          className="px-4 py-2 border border-gray-300 rounded mr-2"
+          className="text-primary px-4 py-2 border border-gray-300 rounded mr-2"
         />
         <button
           onClick={handleAddNode}
@@ -217,7 +217,7 @@ const WorkArea = () => {
           Add Node
         </button>
       </div>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <input
           type="number"
           value={searchValue}
@@ -232,14 +232,14 @@ value to search"
         >
           Search
         </button>
-      </div>
+      </div> */}
       <div className="mt-4">
         <input
           type="number"
           value={deleteValue}
           onChange={(e) => setDeleteValue(e.target.value)}
           placeholder="Enter value to delete"
-          className="px-4 py-2 border border-gray-300 rounded mr-2"
+          className="text-primary px-4 py-2 border border-gray-300 rounded mr-2"
         />
         <button
           onClick={handleDelete}

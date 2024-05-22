@@ -1,0 +1,143 @@
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* margin-bottom: 10px; */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-head-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.add-head-button:hover {
+  background-color: #45a049;
+}
+
+.add-tail-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.add-tail-button:hover {
+  background-color: #0b7dda;
+}
+
+.remove-head-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.remove-head-button:hover {
+  background-color: #da190b;
+}
+
+.remove-tail-button {
+  background-color: #ff9800;
+  color: white;
+}
+
+.remove-tail-button:hover {
+  background-color: #e68900;
+}
+
+.list-container {
+  margin-top: 20px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.list-item {
+  position: relative;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  list-style-type: none; /* Remove default list item marker */
+}
+
+.arrow {
+  font-size: 24px;
+}
+
+.node-value {
+  display: inline-block;
+  padding: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.node-value.adding {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.node-value.removing {
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.spacer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.head .label {
+  background-color: #007bff;
+}
+
+.tail .label {
+  background-color: #ff9900;
+}
+
+.empty-list {
+  font-size: 18px;
+  color: #999;
+}
